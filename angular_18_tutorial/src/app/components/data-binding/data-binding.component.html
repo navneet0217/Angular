@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-4">
+        One way data binding- from .ts to .html
+       ---Interpolation---
+       <h1 class="bg-success"> {{courseName}}</h1>
+        {{releaseYear}}
+        {{isActive}}
+        {{releaseDate}}
+        {{inputType}}
+       <div >
+         <input  type="text" value="{{courseName}}" placeholder="Enter your value">
+         <input type="{{inputType}}">
+       </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+     ---Property binding---
+      <div [class]="myClassName">
+        <!-- <input [type]="inputType" > -->
+         hey there!  
+      </div>
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+    ---Event binding-- (from html to ts)
+    <div>
+        <button class="btn btn-success" (click)="showAlert('Welcome to Angular 18')">Show Welcome</button>
+        <button class="btn btn-primary" (click)="changeCourseName()">Change course</button>
+         <button class="btn btn-secondary" (click)="changeName()">Change Name</button>
+    </div>
+    
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-4">
+        ---Two way data binding--  Only works on input element
+        <div><input type="text" [(ngModel)]="courseName"></div>
+
+
+        <div>
+            <select [(ngModel)]="courseNameSecond"  >
+                <option value="">Select your course</option>
+
+                <option value="NodeJS">NodeJS</option>
+                <option value="Angular">Angular</option>
+                <option value="React">React</option>
+                <option value="Vue">Vue</option>
+                <option value="Svelte">Svelte</option>
+            </select>
+        </div>
+
+      <input type="checkbox" [(ngModel)]="isWorking">  
+    </div>
+
+    <h2>{{firstName()}}</h2>
+</div>
