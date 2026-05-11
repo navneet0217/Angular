@@ -1,0 +1,107 @@
+<div class="bg-secondary">
+    <span class="bg-primary text-white m-4 ">*ngIf</span>
+<span class="bg-success text-white">*ngFor</span>
+
+</div>
+
+
+
+<div class="container mt-4">
+  <div class="row g-3">
+
+    <div class="col-md-3 col-sm-6" >
+      <div *ngIf="isDiv1Visible" class="card text-white bg-primary text-center p-3">
+        Div 1
+      </div>
+      <div  class="p-2">
+        <button class="btn btn-success me-2" (click)="showDiv1()">show</button>
+        <button class="btn btn-danger" (click)="hideDiv1()">hide</button></div>
+    </div>
+
+      
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card text-white bg-success text-center p-3" *ngIf="isDiv2Visible">
+       Div 2
+      </div>
+      <div  class="p-2">
+        <button class="btn btn-success me-2" (click)="toggle()">Toggle</button>
+        
+    </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card text-white bg-warning text-center p-3" *ngIf="value1 === value2">
+        Div 3
+      </div>
+      <div  class="p-2">
+        <input placeholder="enter value 1" [(ngModel)]="value1" type="text">
+        <input placeholder="enter value 2" [(ngModel)]="value2" type="text">
+    </div>
+
+      
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card text-white bg-danger text-center p-3" *ngIf="matchedAlphabet=='ABC'">
+        Div 4
+      </div>
+      <div  class="p-2">
+        <!-- <input type="checkbox" [(ngModel)]="isActiveDiv" > -->
+         <select name="" id="" [(ngModel)]="matchedAlphabet">
+            <option value="ABC">ABC</option>
+            <option value="XYZ">XYZ</option>
+            <option value="LMN">LMN</option>
+         </select>
+    </div>
+
+    </div>
+    <!-- <div class="col-md-3 col-sm-6">
+        <ul>
+        <li *ngFor="let city of cityArray">   
+            {{city}}
+        </li>    
+        </ul>
+    </div> -->
+    <!-- <div>
+        <select name="" id="">
+            <option value="{{city}}" *ngFor="let city of cityArray">{{city}}</option>
+        </select>
+    </div> -->
+
+    <!-- <div>
+        <ol>
+            <li *ngFor="let student of studentList" [value]="student.id">{{student.name}}</li>
+        </ol>
+        <select name="" id="">
+            <option [value]="student.id" *ngFor="let student of studentList" >
+
+            </option>
+        </select>
+    </div> -->
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employeeList">
+      <th>{{emp.id}}</th>
+      <td>{{emp.name}}</td>
+      <td>{{emp.lastname}}</td>
+      <td *ngIf="emp.status==true">active</td>
+      <td *ngIf="emp.status==false">inactive</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+  </div>
+</div>
