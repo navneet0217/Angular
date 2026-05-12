@@ -24,10 +24,10 @@ studentList:any[]=[{id:1,name:"vikram",age:30},
   {id:3,name:"prasad",age:28},
 ];
 
-employeeList:any[]=[{id:1,name:'navneet',lastname:'anand',status:false},
-  {id:2,name:'vikram',lastname:'pandey',status:true},
-  {id:3,name:'shubham',lastname:'sharma',status:false},
-  {id:4,name:'prasad',lastname:'verma',status:true},
+employeeList:any[]=[{id:1,name:'navneet',gender:'female',lastname:'anand',status:false,totalMarks:90},
+  {id:2,name:'vikram',lastname:'pandey',gender:'femmale',status:true,totalMarks:60},
+  {id:3,name:'shubham',lastname:'sharma',gender:'male',status:false,totalMarks:70},
+  {id:4,name:'prasad',lastname:'verma',gender:'male',status:true,totalMarks:50},
 ]
 
 showDiv1(){
