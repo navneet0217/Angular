@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-attribute-directive',
@@ -14,6 +15,14 @@ export class AttributeDirectiveComponent {
   isDiv2Active:boolean=false
   num1:string=''
   num2:string=''
+
+  constructor(private router:Router){       //design pattern dependency injection
+
+  }
+
+navigateByUrl(){  
+    this.router.navigateByUrl('/data-binding')
+}
 
   customStyle:any={
     'color':'white',
