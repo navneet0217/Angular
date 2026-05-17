@@ -1,0 +1,21 @@
+<!-- pipe is used to format the data in html -->
+
+<div>
+
+    {{firstName |uppercase}}
+
+  {{firstName | lowercase}}
+
+
+  {{filmTitle | titlecase}}
+
+  Today : {{currentDate}}
+  After Pipe: {{currentDate | date : 'dd-MMM-yyyy'}}
+  Time : {{currentDate | date : 'HH:mm:ss'}}
+</div>
+
+<div>
+    Student details is {{studentDetail | json}}
+
+    student details is {{studentDetail.state | customPipe}}
+</div>
