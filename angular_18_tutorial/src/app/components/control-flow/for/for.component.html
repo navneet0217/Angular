@@ -1,0 +1,91 @@
+<div>
+    <ul>
+       @for (item of cityList; track $index) {
+         <li>{{item}}</li>
+       }
+    </ul>
+</div>
+
+<div>
+    @for (item of cityList; track $index) {
+        <div>{{item}}</div>
+    }
+</div>
+
+<div>
+    <select name="" id="">
+       @for (item of cityList; track $index) {
+         <option value="">{{item}}</option>
+       }
+    </select>
+</div>
+
+
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Course</th>
+        </tr>
+        @for (student of studentDetails; track $index) {
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.rollNo}}</td>
+                <td>{{student.course}}</td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-3">
+      <input [(ngModel)]="dayNumber" type="text" >
+    </div> 
+
+    @switch (dayNumber) {
+        @case ('1') {
+            <div class="col-3">
+            Monday
+        </div>
+        }
+        @case ('2') {
+            <div class="col-3">
+            Tuesday
+        </div>
+        }
+        @case ('3') {
+            <div class="col-3">
+            Wednesday
+        </div>
+        }
+        @case ('4') {
+            <div class="col-3">
+            Thursday
+        </div>
+        }
+        @case ('5') {
+            <div class="col-3">
+            Friday
+        </div>
+        }
+        @case ('6') {
+            <div class="col-3">
+            Saturday
+        </div>
+        }
+        @case ('7') {
+            <div class="col-3">
+            Sunday
+        </div>
+        }
+        @default {
+            <div class="col-3">
+            Invalid day number
+        </div>
+        }
+        
+    }
+</div>
