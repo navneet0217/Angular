@@ -1,0 +1,78 @@
+<!-- if form tag used you will use ngmodel and hence you should use name attribute for the input fields -->
+
+<form  #form="ngForm" (ngSubmit)="onSubmit(form)" class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">First name</label>
+      <input [(ngModel)]="studentDetails.firstName" name="firstName"  type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Last name</label>
+      <input [(ngModel)]="studentDetails.lastName" name="lastName" type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustomUsername">Username</label>
+      <div class="input-group">
+       
+        <input #fName="ngModel" [(ngModel)]="studentDetails.userName" name="userName" type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required minlength="3">
+       
+        <div class="text-danger">
+          @if ((fName.touched || fName.dirty) && (fName.errors?.['required']) ) {
+            <span>This is required  </span>
+          }
+          @else if ((fName.touched || fName.dirty) && (fName.errors?.['minlength']) ) {
+            <span>Min 3 character required </span>
+          }
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">City</label>
+      <input [(ngModel)]="studentDetails.city" name="city" type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom04">State</label>
+      <select [(ngModel)]="studentDetails.state" name="state" class="form-select" id="">
+        <option  selected value disabled>Choose state</option>
+        <option value="maharashtra">Maharastra</option>
+        <option value="delhi">Delhi</option>
+        <option value="gujrat">Gujrat</option>
+        <option value="mp">MP</option>
+      </select>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom05">Zip</label>
+      <input [(ngModel)]="studentDetails.zip" name="zip" type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input [(ngModel)]="studentDetails.isCheckTerms" name="isCheckTerms" class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <div>FormValue: {{formValue|json}}</div>
+  <button (click)="resetForm()" class="btn btn-secondary me-2">Reset Form</button>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+

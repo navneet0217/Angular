@@ -8,6 +8,7 @@ import { ForComponent } from './components/control-flow/for/for.component';
 import { IfElseComponent } from './components/control-flow/if-else/if-else.component';
 import { SwitchComponent } from './components/control-flow/switch/switch.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
 
 export const routes: Routes = [
 
@@ -46,6 +47,10 @@ export const routes: Routes = [
    {
       path:'pipe',
       component:PipeComponent
+   },
+   {
+      path:'template-form',
+      component:TemplateFormComponent
    }
 
 
