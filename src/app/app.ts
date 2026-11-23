@@ -13,4 +13,8 @@ export class App {
   userName = "Navneet0212"
   count = 3
   isAdmin = true
+  mytitle = signal("Angular tutorial")
+  getUsers() {
+    return "Mohit Kumar"
+  }
 }
