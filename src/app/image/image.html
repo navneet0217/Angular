@@ -1,0 +1,26 @@
+<p>image works!</p>
+
+
+<button [disabled]="isDisabled">Submit</button>
+<input [value]="userName">
+<input type="text" [placeholder]="placeholderName">
+<p [innerText]="'count:' + count()"></p>
+
+<div [class.active]="isActive">
+    box 1
+</div>
+
+
+<div [style.background-color]="boxColor">
+
+    box 2
+</div>
+
+
+<div [style.width.px]="boxWidth">
+    box 3
+</div>
+
+
+
+<img [src]="imageUrl" alt="">
