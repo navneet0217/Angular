@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { Signin } from './signin/signin';
 import { Image } from './image/image';
+import { Events } from './events/events';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, Signin, Image],
+  imports: [RouterOutlet, Login, Signin, Image, Events],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
