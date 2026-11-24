@@ -4,11 +4,12 @@ import { Login } from './login/login';
 import { Signin } from './signin/signin';
 import { Image } from './image/image';
 import { Events } from './events/events';
+import { FunctionCall } from './function-call/function-call';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, Signin, Image, Events],
+  imports: [RouterOutlet, Login, Signin, Image, Events, FunctionCall],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
